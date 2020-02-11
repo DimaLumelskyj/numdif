@@ -22,7 +22,9 @@ public class ReadDataTabText {
         try {
             lines = Files.readAllLines(filePath, charset);
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Error read file: " + filePath);
+            System.out.println(e.toString());
+            System.exit(-1);
         }
         return lines;
     }
